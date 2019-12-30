@@ -283,9 +283,31 @@
  	<target name="build-restcomm-jss7" description="">
 
                 <exec failonerror="true" executable="${mvn.executable}" dir="${checkout.dir}/${restcomm-jss7.package.name}">
+                        <arg line="package -Dmaven.test.skip=true -Pdeploy-module-jboss5 -Drelease.dir=${release.dir} -Djboss.home=${jboss.home} -Djboss.path=../../${jboss.home.relative.path}" />
+                </exec>
+
+                 <exec failonerror="true" executable="${mvn.executable}" dir="${checkout.dir}/${restcomm-jss7.package.name}/management">
                         <arg line="install -Dmaven.test.skip=true -Pdeploy-module-jboss5 -Drelease.dir=${release.dir} -Djboss.home=${jboss.home} -Djboss.path=../../${jboss.home.relative.path}" />
                 </exec>
  
+                 <exec failonerror="true" executable="${mvn.executable}" dir="${checkout.dir}/${restcomm-jss7.package.name}/m3ua">
+                        <arg line="install -Dmaven.test.skip=true -Pdeploy-module-jboss5 -Drelease.dir=${release.dir} -Djboss.home=${jboss.home} -Djboss.path=../../${jboss.home.relative.path}" />
+                </exec>
+ 
+                 <exec failonerror="true" executable="${mvn.executable}" dir="${checkout.dir}/${restcomm-jss7.package.name}/sccp">
+                        <arg line="install -Dmaven.test.skip=true -Pdeploy-module-jboss5 -Drelease.dir=${release.dir} -Djboss.home=${jboss.home} -Djboss.path=../../${jboss.home.relative.path}" />
+                </exec>
+
+                 <exec failonerror="true" executable="${mvn.executable}" dir="${checkout.dir}/${restcomm-jss7.package.name}/tcap">
+                        <arg line="install -Dmaven.test.skip=true -Pdeploy-module-jboss5 -Drelease.dir=${release.dir} -Djboss.home=${jboss.home} -Djboss.path=../../${jboss.home.relative.path}" />
+                </exec>
+
+                 <exec failonerror="true" executable="${mvn.executable}" dir="${checkout.dir}/${restcomm-jss7.package.name}/oam">
+                        <arg line="install -Dmaven.test.skip=true -Pdeploy-module-jboss5 -Drelease.dir=${release.dir} -Djboss.home=${jboss.home} -Djboss.path=../../${jboss.home.relative.path}" />
+                </exec>
+
+
+
         </target>
 
 
